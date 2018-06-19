@@ -1,0 +1,11 @@
+<view class="sign-in-wrapper">
+	<image class="sign-bg" mode="widthFix" src="/images/login-bg.jpg"></image>
+	<view class="sign-in-main">
+		<image class="sign-in-tle" mode="widthFix" src="/images/login-tle.png"></image>
+		<button class="wx-sign-btn" open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber'>微信用户一键登录</button>
+		<view class="phone-sign-btns" bindtap="gotoSign">
+			<text class="phone-sign-btn-txt">手机号码登录</text>
+			<text class="phone-sign-btn-txt">/注册</text>
+		</view>
+	</view>
+</view>

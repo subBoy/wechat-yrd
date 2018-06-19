@@ -1,0 +1,62 @@
+<view class="index-wrapper">
+	<view class="index-group">
+		<view class="desc-wrapper">
+			<image class="desc-icon" src="/images/desc-icon.png"></image>
+			<text class="desc-txt">选择有人贷， 出借无忧， 省心！</text>
+		</view>
+		<view class="main-wrapper">
+			<view class="num-wrapper">
+				<view class="num-group">
+					<block wx:for="{{earnings}}" wx:for-item="num" wx:key="num">
+						<view class="num-item">
+							<image class="num-bg" src="/images/num-bg.png"></image>
+							<text class="num-txt">{{num}}</text>
+						</view>
+					</block>
+				</view>
+				<text class="num-desc">预计到期收益/元</text>
+			</view>
+			<view class="form-wrapper">
+				<form bindsubmit="formSubmit">
+					<view class="section-item">
+					  <view class="section-title">期待年华回报率</view>
+					  <picker class="picker-wrapper" name="retuenPicker" bindchange="bindReturnPickerChange" value="{{returnIndex}}" range="{{returnArray}}">
+					    <view class="retuen-picker-valve">{{returnArray[returnIndex]}}</view>
+					    <image class="select-icon" src="/images/select-icon.png"></image>
+					  </picker>
+					</view>
+					<view class="section-item">
+					  <view class="section-title">封闭期限</view>
+					  <picker class="picker-wrapper" name="limitPicker" bindchange="bindLimitPickerChange" value="{{limitIndex}}" range="{{limitArray}}">
+					    <view class="limit-picker-valve">{{limitArray[limitIndex]}}</view>
+					    <image class="select-icon" src="/images/select-icon.png"></image>
+					  </picker>
+					</view>
+					<view class="section-item">
+					  <view class="section-title">出借金额</view>
+					  <view class="input-wrapper">
+					  	<view class="remove-btn" bindtap="removeNum">
+					  		<image class="input-btn" src="/images/remove.png"></image>
+					  	</view>
+					  	<input name="inputNumber" class="inputNumber"  bindinput="bindKeyInput" type="number" value="{{inputValue}}" />
+					  	<view class="remove-btn" bindtap="addNum">
+					  		<image class="input-btn" src="/images/add.png"></image>
+					  	</view>
+					  </view>
+					</view>
+					<view class="submit-btn">
+						<button class="submit-btn-group" formType="submit">
+							<image class="submit-bg" src="/images/btn-bg.png"></image>
+							<view class="submit-btn-style">
+								<image class="submit-icon" src="/images/btn-ic.png"></image>
+								<text class="submit-txt">立即计算</text>
+							</view>
+						</button>
+					</view>
+					<text class="from-desc">具体收益以实际到账为准</text>
+				</form>
+			</view>
+		</view>
+	</view>
+	<image class="bottom-bg" src="/images/index-bg.png"></image>
+</view>

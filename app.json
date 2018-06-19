@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/signUp/signUp",
+    "pages/user/user",
+    "pages/signIn/signIn",
+    "pages/index/index",
+    "pages/find/find",
+    "pages/find-detail/find-detail",
+    "pages/discover/index",
+    "pages/mine/index",
+    "pages/mine/login-mobile",
+    "pages/discover/detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#f1f9ff",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "有人贷",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#969696",
+    "selectedColor": "#0a7eff",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/sel-index.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/sel-find.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/sel-user.png"
+      }
+    ]
+  }
+}

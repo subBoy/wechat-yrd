@@ -1,0 +1,54 @@
+.sign-in-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
+.sign-bg {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+}
+.sign-in-main {
+	display: flex;
+	align-items: center;
+	flex-flow: column;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+.sign-in-tle {
+	margin: 40rpx auto 90rpx;
+	width: 60%;
+}
+.wx-sign-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 660rpx;
+	height: 100rpx;
+	border-radius: 50rpx;
+	background-color: #09bb07;
+	font-size: 16px;
+	color: #fff;
+}
+.phone-sign-btns {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.phone-sign-btn-txt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100rpx;
+	font-size: 14px;
+	color: #99adbb;
+}

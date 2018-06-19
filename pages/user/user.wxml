@@ -1,0 +1,42 @@
+<view class="user-wrapper">
+	<view class="user-main-wrapper">
+		<view class="user-info" bindtap="gotoSign">
+			<image class="portrait" src="{{avatar}}"></image>
+			<text class="user-name">{{accountName}}</text>
+		</view>
+		<view class="account-info" wx:if="{{isLogin && isOlder && isInvestor}}">
+			<view class="account-info-item">
+				<text class="account-info-item-txt">账户待收：</text>
+				<text class="account-info-item-txt">￥{{dueSum}}</text>
+			</view>
+			<view class="account-info-item">
+				<text class="account-info-item-txt">下个回款日：</text>
+				<text class="account-info-item-txt">{{dueDate}}</text>
+			</view>
+			<view class="account-info-item">
+				<text class="account-info-item-txt">下个回款金额：</text>
+				<text class="account-info-item-txt">￥{{dueSumNext}}</text>
+			</view>
+		</view>
+		<view class="relation-me">
+			<view class="relation-style" bindtap="makeCall">
+				<image class="style-icon" src="/images/tel.png"></image>
+				<text class="style-txt">400-663-9190</text>
+			</view>
+			<button class="relation-style" open-type="contact">
+				<image class="style-icon" src="/images/wx.png"></image>
+				<text class="style-txt">咨询在线客服</text>
+			</button>
+		</view>
+		<image class="view-hr" mode="widthFix" src="/images/hr.png"></image>
+		<button class="share-btn" open-type="share">
+			<image class="share-icon" src="/images/share-icon.png"></image>
+			<text class="share-btn-txt">一键分享给好友</text>
+		</button>
+		<view class="user-desc-wrapper">
+			<text class="user-desc-txt">想要获取更多内容</text>
+			<text class="user-desc-txt">请移步至有人贷官方客户端</text>
+		</view>
+		<image class="user-b-bg" mode="widthFix" src="/images/user-b-bg.png"></image>
+	</view>
+</view>

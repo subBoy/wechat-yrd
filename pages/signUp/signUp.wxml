@@ -1,0 +1,31 @@
+<view class="sign-up-wrapper">
+	<image class="sign-bg" mode="widthFix" src="/images/login-bg.jpg"></image>
+	<view class="sign-up-main">
+		<text class="sign-up-tle">开启有人贷，就这么简单！</text>
+		<form class="sign-up-form" bindsubmit="formSubmit">
+			<view class="form-group">
+				<view class="first-step" wx:if="{{!stepStatus}}">
+					<view class="input-wrapper">
+						<input name="inputPhone" class="inputSelf"  bindinput="bindPhoneInput" bindfocus="focusCommon" maxlength="11" type="number" placeholder="输入手机号" value="{{phoneValue}}" />
+					</view>
+					<view class="input-wrapper">
+						<input name="inputCode" class="inputSelf"  bindinput="bindCodeInput" bindfocus="focusCommon" type="number" placeholder="输入验证码" value="{{codeValue}}" />
+						<view class="get-code-btn-wrapper" bindtap="getCodeFun">
+							<text class="get-code-btn {{ gcfStatus ? '' : 'errOk'}} ">{{getCodeBtnTxt}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="second-step input-wrapper" wx:else>
+					<input name="inputPassword" class="inputSelf"  bindinput="bindPasswordInput" bindfocus="focusCommon" type="text" placeholder="填写密码  (长度为8-16位的字符串)" value="{{passwordValue}}" />
+				</view>
+				<vier class="error-hint-wrapper">
+					<view class="error-hint-group" wx:if="{{errStatus}}">
+						<icon type="warn" size="12" color="rgb(253, 77, 73)"></icon>
+						<text class="error-hint-txt">{{errorHintTxt}}</text>
+					</view>
+				</vier>
+				<button class="submit-btn" formType="submit">{{submitTxt}}</button>
+			</view>
+		</form>
+	</view>
+</view>

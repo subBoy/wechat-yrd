@@ -1,0 +1,24 @@
+<view class="find-wrapper">
+	<div class="find-main-wrapper">
+		<block wx:for="{{findDataList}}" wx:key="item">
+			<view class="find-main" bindtap='gotoDetail' data-detail-url='{{item.detailUrl}}' data-tle="{{item.tle}}">
+				<view class="find-item-tle">
+					<image class="tle-icon" mode="right" src="/images/tle-l-ic.png"></image>
+					<text class="tle-txt">{{item.tle}}</text>
+					<image class="tle-icon" mode="left" src="/images/tle-r-ic.png"></image>
+				</view>
+				<view class="find-item-main">
+					<image class="item-img" mode="widthFix" src="{{item.imgUrl}}"></image>
+					<view class="item-info-wrapper">
+						<text class="item-time">{{item.time}}</text>
+						<view class="item-btn">查看详情</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</div>
+	<view class="loading-wrapper">
+		<text class="loading-txt">{{loadingTxt}}</text>
+		<image class="loading-icon" src="/images/loading-icon.png"></image>
+	</view>
+</view>

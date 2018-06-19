@@ -1,0 +1,8 @@
+text, input {
+	font-size: 24rpx;
+  font-family: "SimSun, MicroSoft Yahei";
+}
+image {
+	display: block;
+	border: none;
+}

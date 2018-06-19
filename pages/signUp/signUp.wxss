@@ -1,0 +1,98 @@
+.sign-up-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
+.sign-bg {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+}
+.sign-up-main {
+	display: flex;
+	align-items: center;
+	flex-flow: column;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+.sign-up-tle {
+	padding-top: 40rpx;
+	font-size: 44rpx;
+	color: #526c7f;
+}
+.sign-up-form {
+	width: 100%;
+}
+.form-group {
+	padding: 0 40rpx;
+}
+.input-wrapper {
+	position: relative;
+	margin-top: 60rpx;
+	border-bottom: 1px solid #526c7f;
+}
+.get-code-btn-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+}
+.get-code-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px;
+	padding: 5rpx 20rpx;
+	border-radius: 30rpx;
+	white-space: nowrap;
+	background-color: #6dbee3;
+	color: #fff;
+}
+.get-code-btn.errOk {
+	background-color: #969696;
+}
+.inputSelf {
+	width: 100%;
+	font-size: 14px;
+}
+.error-hint-txt {
+	padding-left: 10rpx;
+	color: #ff4d49;
+	font-size: 12px;
+}
+.error-hint-wrapper {
+	display: flex;
+	margin-bottom: 20rpx;
+	align-items: center;
+	justify-content: center;
+	height: 80rpx;
+}
+.error-hint-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.submit-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #526c7f;
+	color: #fff;
+	font-size: 16px;
+	width: 100%;
+	height: 100rpx;
+	border-radius: 50rpx;
+}

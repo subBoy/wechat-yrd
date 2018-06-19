@@ -1,0 +1,156 @@
+.index-wrapper {
+	background-color: #f1f9ff;
+}
+.index-group {
+	padding: 0 40rpx 0 40rpx;
+}
+.desc-wrapper {
+	display: flex;
+	align-items: center;
+}
+.desc-icon {
+	width: 50rpx;
+	height: 50rpx;
+}
+.desc-txt {
+	padding-left: 20rpx;
+	font-size: 28rpx;
+	color: #0a7eff;
+}
+.main-wrapper {
+	margin: 20rpx auto 30rpx;
+	border: 2rpx solid #daedfc;
+	border-radius: 20rpx;
+}
+.num-wrapper {
+	display: flex;
+	flex-flow: column;
+}
+.num-group {
+	display: flex;
+	justify-content: center;
+}
+.num-item {
+	position: relative;
+	margin: 40rpx 10rpx 10rpx;
+	width: 72rpx;
+	height: 98rpx;
+}
+.num-bg {
+	width: 72rpx;
+	height: 98rpx;
+}
+.num-txt {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 72rpx;
+	height: 98rpx;
+	z-index: 1;
+	font-size: 54rpx;
+	color: #ff4d49;
+	justify-content: center;
+	align-items: center;
+}
+.num-desc {
+	text-align: center;
+	color: #ff4d49;
+}
+.bottom-bg {
+	width: 750rpx;
+	height: 248rpx;
+}
+.form-wrapper {
+	padding: 0 30rpx;
+}
+.input-wrapper {
+	display: flex;
+}
+.input-btn {
+	width: 32px;
+	height: 32px;
+}
+.inputNumber {
+	flex: 1;
+	text-align: center;
+	font-size: 28rpx;
+	color: #c8c8c8;
+}
+.section-item {
+	padding-top: 40rpx;
+	border-bottom: 1px solid #dae7f1;
+}
+.section-title {
+	line-height: 28rpx;
+	font-size: 28rpx;
+	padding-bottom: 30rpx;
+}
+.picker-wrapper {
+	position: relative;
+}
+.select-icon {
+	position: absolute;
+	right: 0;
+	bottom: 50%;
+	width: 15px;
+	height: 10px;
+	margin-bottom: -5px;
+	z-index: 1;
+}
+.return-picker-valve {
+	line-height: 32px;
+	font-size: 36rpx;
+	color: #000;
+}
+.limit-picker-valve {
+	line-height: 32px;
+	font-size: 28rpx;
+	color: #c8c8c8;
+}
+.submit-btn {
+	position: relative;
+	margin-top: 40rpx;
+}
+.submit-btn-style {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 446rpx;
+	height: 72rpx;
+	justify-content: center;
+	align-items: center;
+}
+.submit-txt {
+	padding-left: 10rpx;
+	color: #fff;
+	font-size: 32rpx;
+}
+.submit-icon {
+	width: 30rpx;
+	height: 34rpx;
+}
+.submit-btn-group {
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	border-radius: 36rpx;
+	width: 446rpx;
+	height: 72rpx;
+}
+.submit-bg {
+	margin: 0 auto;
+	width: 446rpx;
+	height: 72rpx;
+}
+.input-wrapper {
+	margin-bottom: 10rpx;
+}
+.from-desc {
+	display: block;
+	padding: 20rpx 0 40rpx;
+	font-size: 20rpx;
+	color: #c5d1da;
+	text-align: center;
+}
