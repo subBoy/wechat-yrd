@@ -75,13 +75,23 @@ Page({
         expectedInterest: _startVal,
         earnings: _startValStr.split('')
       })
-      if (startVal >= expectedInterest - 0.1) {
+      
+      if ((startVal >= expectedInterest - 0.1) && cardinal > 0) {
         _this.setData({
           expectedInterest: expectedInterest,
           earnings: expectedInterestStr.split('')
         })
         return
       }
+
+      if ((expectedInterest >= startVal - 0.1) && cardinal < 0) {
+        _this.setData({
+          expectedInterest: expectedInterest,
+          earnings: expectedInterestStr.split('')
+        })
+        return
+      }
+
       requestAnimationFrame(_to)
     };
     _to()

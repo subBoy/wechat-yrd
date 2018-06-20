@@ -19,35 +19,19 @@ Page({
   },
   onLoad: function (options) {
     var userInfo = wx.getStorageSync('userInfo');
-    if (userInfo) {
-      if (userInfo.source === 'wx') {
-        this.setData({
-          accountName: userInfo.data.account,
-          avatar: userInfo.data.avatar,
-          isLogin: true,
-          isOlder: userInfo.data.isOlder,
-          isInvestor: userInfo.data.isInvestor,
-          dueSum: userInfo.data.data1,
-          dueDate: userInfo.data.data2,
-          dueSumNext: userInfo.data.data3
-        });
-        return;
-      }
-      if (userInfo.source === 'ph') {
-        this.setData({
-          accountName: userInfo.data.account,
-          avatar: userInfo.data.avatar,
-          isLogin: true,
-          isOlder: userInfo.data.isOlder,
-          isInvestor: userInfo.data.isInvestor,
-          dueSum: userInfo.data.data1,
-          dueDate: userInfo.data.data2,
-          dueSumNext: userInfo.data.data3
-        });
-        return;
-      }
+    if (userInfo.source === 'wx') {
+      this.setData({
+        accountName: userInfo.data.account,
+        avatar: userInfo.data.avatar,
+        isLogin: true,
+        isOlder: userInfo.data.isOlder,
+        isInvestor: userInfo.data.isInvestor,
+        dueSum: userInfo.data.data1,
+        dueDate: userInfo.data.data2,
+        dueSumNext: userInfo.data.data3
+      });
+      return;
     }
-    // wx.clearStorageSync()
   },
   makeCall: function () {
     wx.makePhoneCall({

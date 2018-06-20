@@ -16,7 +16,7 @@
 					</view>
 				</view>
 				<view class="second-step input-wrapper" wx:else>
-					<input name="inputPassword" class="inputSelf"  bindinput="bindPasswordInput" bindfocus="focusCommon" type="text" placeholder="填写密码  (长度为8-16位的字符串)" value="{{passwordValue}}" />
+					<input name="inputPassword" class="inputSelf"  bindinput="bindPasswordInput" bindfocus="focusCommon" type="password" placeholder="填写密码  (长度为8-16位的字符串)" value="{{passwordValue}}" />
 				</view>
 				<vier class="error-hint-wrapper">
 					<view class="error-hint-group" wx:if="{{errStatus}}">

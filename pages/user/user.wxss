@@ -104,3 +104,29 @@
 	padding-top: 80rpx;
 	width: 100%;
 }
+.suspend-share-btn-wrapper {
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	width: 80rpx;
+	height: 80rpx;
+	bottom: 190rpx;
+	right: 15rpx;
+	border-radius: 40rpx;
+	z-index: 10;
+}
+.suspend-share-btn {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	width: 80rpx;
+	height: 80rpx;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	z-index: 1;
+}
+.suspend-share-icon {
+	width: 80rpx;
+	height: 80rpx;
+}

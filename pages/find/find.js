@@ -27,7 +27,6 @@ Page({
           obj.detailUrl = _this.data.basePath + item.url;
           ret.push(obj)
         })
-        console.log(ret)
         _this.setData({
           findDataList: ret
         })
@@ -70,7 +69,6 @@ Page({
     })
   },
   gotoDetail: function(e) {
-    console.log(e);
     wx.navigateTo({
       url: '/pages/find-detail/find-detail?detailUrl=' + e.currentTarget.dataset.detailUrl + '&tle=' + e.currentTarget.dataset.tle
     })

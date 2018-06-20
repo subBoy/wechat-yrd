@@ -1,6 +1,7 @@
 var app = getApp();
 Page({
   data: {
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     stepStatus: false,
     errStatus: false,
     gcfStatus: true,
@@ -165,11 +166,10 @@ Page({
   },
   setval: function () {
     var codeTime = this.data.codeTime;
-    codeTime--
+    codeTime--;
     var codeTxt = codeTime + 's后重试';
     if (codeTime < 1) {
-      clearInterval(this.data.setInter)
-      console.log('......');
+      clearInterval(this.data.setInter);
       this.setData({
         codeTime: 60,
         getCodeBtnTxt: '重新发送',
@@ -201,9 +201,36 @@ Page({
         return;
       }
     }
+
     if (!this.data.stepStatus) {
-      this.setData({
-        stepStatus: true
+      wx.request({
+        url: app.globalData.basePath + '/wechat/mine.do',
+        header: {
+          "context-type": "application/json"
+        },
+        data: {
+          cmd: 'step1',
+          phoneNumber: this.data.phoneValue,
+          checkCode: this.data.codeValue
+        },
+        success: res => {
+          if (res.data.status) {
+            if (res.data.step == 2) {
+              this.setData({
+                stepStatus: true
+              });
+            } else {
+              app.globalData.token = res.data.token;
+              this.getUserInfo();
+            }
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        }
       });
       return;
     }
@@ -212,6 +239,71 @@ Page({
       if (!pdLayout) {
         return;
       }
+    }
+
+    wx.request({
+      url: app.globalData.basePath + '/wechat/mine.do',
+      header: {
+        "context-type": "application/json"
+      },
+      data: {
+        cmd: 'step2',
+        phoneNumber: this.data.phoneValue,
+        password: this.data.passwordValue
+      },
+      success: res => {
+        if (res.data.status) {
+          app.globalData.token = res.data.token
+          this.getUserInfo();
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
+  getUserInfo: function () {
+    if (app.globalData.token) {
+      wx.request({
+        url: app.globalData.basePath + '/wechat/mine.do',
+        header: {
+          "context-type": "application/json"
+        },
+        data: {
+          cmd: 'info',
+          token: app.globalData.token
+        },
+        success: res => {
+          var userData = res;
+          if (!this.data.canIUse) {
+            wx.showModal({
+              title: '提示',
+              content: '您的微信版本过低，不能使用此功能。请先升级微信版本！',
+              showCancel: false
+            })
+            return;
+          };
+          wx.getSetting({
+            success: resData => {
+              if (resData.authSetting['scope.userInfo']) {
+                wx.getUserInfo({
+                  success: res => {
+                    userData.source = 'wx';
+                    userData.data.avatar = res.userInfo.avatarUrl;
+                    wx.setStorageSync('userInfo', userData);
+                    wx.reLaunch({
+                      url: '/pages/user/user'
+                    })
+                  }
+                })
+              }
+            }
+          })
+        }
+      })
     }
   }
 })
